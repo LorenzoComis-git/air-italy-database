@@ -1,0 +1,58 @@
+-- Show pilots and the number of trips they conducted in March.
+-- Pilots are ordered in descending order by the number of trips --
+
+SELECT p.pilotId, p.firstName, p.lastName, COUNT(*) AS tripCount
+FROM trip t
+JOIN pilot p ON t.pilotId = p.pilotId
+WHERE MONTH(t.flightDate) = 3
+GROUP BY p.pilotId
+ORDER BY tripCount DESC;
+
+
+
+
+-- Show, for each passenger, how many bookings they made for trips in March --
+
+SELECT v.fiscalCode, v.firstName, v.lastName, COUNT(*) AS bookingCount
+FROM booking b
+JOIN passenger v ON b.passengerFiscalCode = v.fiscalCode
+WHERE MONTH(b.flightDate) = 3
+GROUP BY v.fiscalCode;
+
+
+
+
+-- Show the aircraft registrations flown by the pilot with id "P009" --
+
+SELECT DISTINCT aircraftRegistration
+FROM trip
+WHERE pilotId = 'P009';
+
+
+
+
+-- Show the number of flights departing from Italian airports --
+
+SELECT COUNT(*) AS totalFlightsFromItaly
+FROM flight 
+JOIN airport ON flight.departureAirport = airport.code 
+WHERE airport.country = 'Italy';
+
+
+
+
+-- Show all trips currently in progress --
+
+SELECT *
+FROM trip
+WHERE status = 'in progress';
+
+
+
+
+-- Insert a new trip (in this case it is not accepted by the system because there is another trip on this date
+-- operated by pilot "P002") --
+
+INSERT INTO trip (flightId, flightDate, status, aircraftRegistration, pilotId)
+VALUES
+	('V0002', '2023-02-28', 'in progress', 'A001', 'P002');
