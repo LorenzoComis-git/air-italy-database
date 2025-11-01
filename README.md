@@ -1,5 +1,10 @@
 # Air Italy Database Management System
 
+![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-316192?style=for-the-badge&logo=sql&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+
+
 ## Project Context
 
 This project was developed for the **Database** course during the **2022-2023 academic year**. The assignment required students to design and implement a complete database system using SQL, demonstrating proficiency in:
@@ -49,11 +54,6 @@ The intermediate version expanded on the initial design by adding essential attr
 ![Final ER Diagram](assets/schema-final.png)
 
 The final schema represents the complete conceptual model with all entities, attributes, relationships, and cardinalities fully specified. This diagram shows the sophisticated relationship between flights (abstract route definitions) and trips (concrete flight instances), along with the complex booking system.
-
-> **Note**: To display the ER diagrams in this README, create an `assets/` folder in your project directory and save screenshots of your ER diagrams from the PDF with the following names:
-> - `schema-skeleton.png` - Initial basic schema
-> - `schema-intermediate.png` - Intermediate development schema  
-> - `schema-final.png` - Complete final schema
 
 ## Logical Schema
 
@@ -174,12 +174,6 @@ CREATE TABLE IF NOT EXISTS booking (
 - InnoDB storage engine support
 - UTF8MB4 character set support
 
-### Project Deliverables
-As specified in the course requirements, this project includes:
-- **DDL Script** (`DB Creation.sql`): Complete database schema definition
-- **DML Script** (`Data Insert.txt`): Sample data population with realistic test cases
-- **Query Examples** (`Query Exemples.txt`): Demonstration of various SQL operations and analytical capabilities
-
 ## Example Queries
 
 The system supports complex analytical queries for operational reporting and management insights:
@@ -267,6 +261,14 @@ The project demonstrates advanced database concepts including:
 - Composite primary keys and unique constraints
 - Normalized database design following 3NF principles
 - Analytical queries with joins, aggregations, and filtering
+
+## 👨‍💻 Author
+
+Lorenzo Comis
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
